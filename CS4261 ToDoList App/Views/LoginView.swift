@@ -18,6 +18,11 @@ struct LoginView: View {
                 
                 // Login Form
                 Form {
+                    if !viewModel.errorMessage.isEmpty {
+                        Text(viewModel.errorMessage)
+                            .foregroundColor(Color.red)
+                    }
+                    
                     TextField("Email Address", text: $viewModel.email)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .autocapitalization(.none)
@@ -27,6 +32,7 @@ struct LoginView: View {
                     
                     TodoListButton(title: "Login", background: .pink) {
                         // Attempt log in
+                        viewModel.login()
                     }
                     .padding()
                 }
@@ -38,7 +44,7 @@ struct LoginView: View {
                     NavigationLink("Create an account here",
                                    destination: RegisterView())
                 }
-                .padding(.bottom, 200)
+                .padding(.bottom, 180)
                 
                 Spacer() // Get things moved up
             }
