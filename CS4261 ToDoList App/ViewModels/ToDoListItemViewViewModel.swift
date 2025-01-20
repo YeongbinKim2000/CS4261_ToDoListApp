@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class ToDoListItemViewViewModel: ObservableObject {
+    init() {}
+    
+    func toggleIsDone(item: ToDoListItem) {
+        
+    }
+}
