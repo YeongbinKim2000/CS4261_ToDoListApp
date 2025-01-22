@@ -36,6 +36,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		15998A9E2D4090AA00CF2C37 /* Exceptions for "CS4261 ToDoList App" folder in "CS4261 ToDoList App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"CS4261-ToDoList-App-Info.plist",
+			);
+			target = 15DCCC1B2D3DD7E8000FBA6E /* CS4261 ToDoList App */;
+		};
 		15DCCC632D3DE0C9000FBA6E /* Exceptions for "CS4261 ToDoList AppTests" folder in "CS4261 ToDoList App" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -55,6 +62,9 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		15DCCC1E2D3DD7E8000FBA6E /* CS4261 ToDoList App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				15998A9E2D4090AA00CF2C37 /* Exceptions for "CS4261 ToDoList App" folder in "CS4261 ToDoList App" target */,
+			);
 			path = "CS4261 ToDoList App";
 			sourceTree = "<group>";
 		};
@@ -432,6 +442,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CS4261 ToDoList App/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "CS4261-ToDoList-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "To Do List";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -462,6 +473,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CS4261 ToDoList App/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "CS4261-ToDoList-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "To Do List";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
