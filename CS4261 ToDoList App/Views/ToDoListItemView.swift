@@ -10,6 +10,7 @@ import SwiftUI
 struct ToDoListItemView: View {
     @StateObject var viewModel = ToDoListItemViewViewModel()
     let item: ToDoListItem
+    let onSelect: (ToDoListItem) -> Void // Callback for selecting the item
     
     var body: some View {
         HStack {
@@ -31,13 +32,22 @@ struct ToDoListItemView: View {
                     .foregroundStyle(Color.blue)
             }
         }
+        .contentShape(Rectangle()) // Makes the entire row tappable
+        .onTapGesture {
+            onSelect(item)
+        }
     }
 }
 
 #Preview {
-    ToDoListItemView(item: .init(id: "123",
-                                 title: "Get milk",
-                                 dueDate: Date().timeIntervalSince1970,
-                                 createdDate: Date().timeIntervalSince1970,
-                                 isDone: true))
+    ToDoListItemView(
+        item: ToDoListItem(
+            id: "123",
+            title: "Get milk",
+            dueDate: Date().timeIntervalSince1970,
+            createdDate: Date().timeIntervalSince1970,
+            isDone: true,
+            userId: "lwKHxiCBKDcEzmH1w5ow0QYetZA2"
+        )
+    ) { _ in }
 }

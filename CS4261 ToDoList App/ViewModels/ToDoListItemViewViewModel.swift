@@ -6,26 +6,27 @@
 //
 
 import Foundation
-import FirebaseAuth
 import FirebaseFirestore
+import OSLog
 
 class ToDoListItemViewViewModel: ObservableObject {
-    init() {}
+    private let logger = Logger()
     
     func toggleIsDone(item: ToDoListItem) {
-        var newItem = item
-        newItem.setDone(!item.isDone)
-        
-        guard let uid = Auth.auth().currentUser?.uid else {
-            return
-        }
-        
         let db = Firestore.firestore()
-        
+        let userId = item.userId
         db.collection("users")
-            .document(uid)
+            .document(userId)
             .collection("todos")
-            .document(newItem.id)
-            .setData(newItem.asDictionary())
+            .document(item.id)
+            .updateData([
+                "isDone": !item.isDone
+            ]) { error in
+                if let error = error {
+                    self.logger.error("Error toggling isDone: \(error.localizedDescription)")
+                } else {
+                    self.logger.info("Successfully toggled isDone for item ID: \(item.id)")
+                }
+            }
     }
 }
